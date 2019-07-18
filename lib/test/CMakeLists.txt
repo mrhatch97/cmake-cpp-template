@@ -15,6 +15,7 @@ add_library(foo_test INTERFACE)
 target_include_directories(foo_test
 	INTERFACE
 		${CMAKE_CURRENT_LIST_DIR}/include
+		${PROJECT_SOURCE_DIR}/lib/src/include
 )
 
 # Defines a macro that accepts a test name and creates the necessary test
