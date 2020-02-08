@@ -1,7 +1,7 @@
 This is a template for a C++ project using CMake. It is aimed at those who are
 familiar with building C++ via a build tool such as `make`, but have little to
 no experience with CMake. It incorporates automatic document generation using
-Doxygen (if installed) as well as testing using CTest, which is included with 
+Doxygen (if installed) as well as testing using CTest, which is included with
 CMake.
 
 # Requirements
@@ -11,9 +11,9 @@ standard can be reduced, however; it is merely a requirement to compile the
 example code.
 
 # Usage
-To use the template, begin by cloning the repository. If you plan on using git
-and/or a remote git server, reconfigure the repository to point to the desired
-origin. This tutorial does not aim to be a git tutorial.
+To use the template, either click `Use this template` on GitHub or clone
+the repository. Cloning the repository will require reconfiguring the git
+remote branch, which will not be covered here.
 
 Next, create a build directory. It is highly advised that this directory be
 outside the cloned repository; this is why the provided .gitignore does not have
@@ -25,7 +25,7 @@ Navigate to the created build directory. Run the following command:
 
 To elaborate:
 If your build directory is at `~/build/cmake` and your repository exists at
-`~/src/cmake-cpp-template`, navigate to `~/build/cmake` and run 
+`~/src/cmake-cpp-template`, navigate to `~/build/cmake` and run
 `cmake -Bcmake-template ~/src/cmake-cpp-template`.
 
 The -B option specifies the name of the desired build directory, and will create
@@ -41,8 +41,7 @@ static library `foo`, a unit test executable `test_factorial`, and a main
 executable `fooapp`.
 
 The main executable will reside inside the `app` directory, while the library
-will reside inside `lib`. To run the tests using ctest, change directory into
-`lib` and run `ctest`.
+will reside inside `lib`. To run the tests using ctest, run `ctest`.
 
 If Doxygen is installed and available to CMake on your system, HTML
 documentation will also be produced inside `html`.
@@ -61,28 +60,29 @@ should be preferred. The most up-to-date documentation on CMake can be found
 [here](https://cmake.org/cmake/help/latest/).
 
 ```
-.
-├── app                            
-│   ├── CMakeLists.txt             CMake configuration for application
-│   └── src                        Application source code
-│       └── main.cpp
-├── CMakeLists.txt                 Main CMake configuration file
-├── docs                           Doxygen configuration and files
+.                              CMAKE_SOURCE_DIR/PROJECT_SOURCE_DIR
+├── app
+│   ├── src                    Application source code
+│   │   └── main.cpp
+│   └── CMakeLists.txt         CMake configuration for application
+├── docs                       Doxygen configuration and files
 │   └── Doxyfile.in
 ├── lib
-│   ├── CMakeLists.txt             CMake configuration for library
-│   ├── include                    Public include directory
+│   ├── include                Public include directory
 │   │   └── foo
 │   │       └── foo.h
-│   ├── src                        Library source code
-│   │   ├── foo.cpp
-│   │   └── include                Private include directory
-│   │       └── private
-│   └── test
-│       ├── CMakeLists.txt         CMake configuration for library tests
-│       ├── include                Test util library include directory
-│       │   └── test
-│       │       └── util.h
-│       └── test_factorial.cpp     Test cases
+│   ├── src                    Library source code
+│   │   ├── include            Private include directory
+│   │   │   └── private
+│   │   └── foo.cpp
+│   └── CMakeLists.txt         CMake configuration for library
+├── test
+│   ├── include                Test util library include directory
+│   │   └── test
+│   │       └── util.h
+│   ├── CMakeLists.txt         CMake configuration for library tests
+│   └── test_factorial.cpp     Test cases
+├── CMakeLists.txt             Main CMake configuration file
+├── LICENSE
 └── README.md
 ```
