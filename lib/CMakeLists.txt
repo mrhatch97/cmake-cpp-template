@@ -60,12 +60,3 @@ export(TARGETS foo
 install(EXPORT fooConfig
 	DESTINATION share/foo/cmake
 )
-
-# Enable CTest support
-include(CTest)
-
-# Unless builder disables this, add tests to the build
-if(BUILD_TESTING)
-	# Run CMakeLists.txt in the test subdirectory
-	add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/test)
-endif()

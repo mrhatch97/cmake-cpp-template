@@ -37,7 +37,7 @@ macro(add_quick_test test_name)
 	# its working directory.
 	add_test(NAME ${test_name}
 		COMMAND test_${test_name}
-		WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/lib/test)
+		WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/test)
 
 	# Add the executable as a dependency of build_tests. This ensures that all
 	# test executables are built when e.g. `make build_tests` is run.
