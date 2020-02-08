@@ -51,6 +51,16 @@ endif()
 
 # Read and process the CMakeLists.txt in lib.
 add_subdirectory(lib)
+
+# Enable CTest support
+include(CTest)
+
+# Unless builder disables this, add tests to the build
+if(BUILD_TESTING)
+	# Run CMakeLists.txt in the test subdirectory
+	add_subdirectory(test)
+endif()
+
 # Read and process the CMakeLists.txt in app.
 # If you don't want to build an executable, simply delete this and the app
 # directory.
